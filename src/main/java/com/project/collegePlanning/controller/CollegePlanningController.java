@@ -19,5 +19,4 @@ public class CollegePlanningController {
         return "welcome.html";
     }
 
-
 }
