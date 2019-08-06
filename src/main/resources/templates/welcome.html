@@ -6,14 +6,23 @@
 
     <h3>Please create your account below to begin planning your college journey.</h3>
 
+    <!--<br/>Current number of users registered: <span th:text="${users.size}"/>
+    <br/>-->
+
+    <ul>
+        <li th:each="users: ${users}" th:text=""${users.userName}/>
+    </ul>
+
+    <br/>
     <form method="post" action="/Welcome/new">
-        First Name: <input type="text" name="firstName"/>
+        User Name: <input type="text" name="userName"/>
+        <br/>First Name: <input type="text" name="firstName"/>
         <br/>Last Name: <input type="text" name="lastName"/>
         <br/>Email Address: <input type="text" name="email"/>
-        <br/>User Name: <input type="text" name="userName"/>
         <br/><br/><input type="submit" value="Create User"/>
-
     </form>
+    <br/>
+
 </head>
 <body>
 
