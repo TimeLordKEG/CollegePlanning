@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
 
 @Controller
-@RequestMapping("college-planning")
+@RequestMapping("welcome")
 public class CollegePlanningController {
 
     static ArrayList<User> users;
@@ -22,17 +22,17 @@ public class CollegePlanningController {
 
     @RequestMapping(value = "")
     public String loadIndexPage(){
-        return "index.html";
-    }
-
-    @RequestMapping(value = "welcome", method = RequestMethod.GET)
-    public String getNewUser(){
         return "welcome.html";
     }
 
-    @RequestMapping(value = "welcome", method = RequestMethod.POST)
+    @RequestMapping(value ="new user", method = RequestMethod.GET)
+    public String getNewUser(){
+        return "redirect";
+    }
+
+    @RequestMapping(value = "new user", method = RequestMethod.POST)
     public String saveNewUser(@RequestParam String userName, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String email){
 
-        return "welcome.html";
+        return "redirect";
     }
 }
