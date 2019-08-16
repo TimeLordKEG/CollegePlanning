@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+<body>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title>welcome</title>
+    <link href="./register.css" type="text/css" rel="stylesheet">
 
+    <div class="wrapper">
+    <div class="one">
     <h3>Please create your account below to begin planning your college journey.</h3>
+    </div>
 
     <!--<br/>Current number of users registered: <span th:text="${users.size}"/>
     <br/>-->
-
-    <ul>
+    <div class="two">
+    <!--<ul>
         <li th:each="users: ${users}" th:text=""${users.userName}/>
-    </ul>
+    </ul>-->
 
     <br/>
     <form method="post" action="/welcome/new user">
@@ -22,9 +27,13 @@
         <br/><br/><input type="submit" value="Create User"/>
     </form>
     <br/>
+    </div>
 
-</head>
-<body>
+    <div class="three">
+        <img src="./images/dreams.jpg" alt="The future belongs to those who believe in the beauty of their dreams   -- Eleanor Roosevelt" width="225" height="350">
+    </div>
+    </div>
 
 </body>
+</head>
 </html>

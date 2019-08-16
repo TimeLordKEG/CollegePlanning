@@ -3,9 +3,8 @@ package com.project.collegePlanning.controller;
 
 import com.project.collegePlanning.model.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -21,17 +20,22 @@ public class CollegePlanningController {
     }
 
     @RequestMapping(value = "")
-    public String loadIndexPage(){
+    public String loadIndexPage()
+    {
         return "welcome.html";
     }
 
-    @RequestMapping(value ="new user", method = RequestMethod.GET)
-    public String getNewUser(){
+    @GetMapping (value ="new user")
+    public String getNewUser(Model model)
+    {
+
         return "redirect";
     }
 
-    @RequestMapping(value = "new user", method = RequestMethod.POST)
-    public String saveNewUser(@RequestParam String userName, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String email){
+    @PostMapping(value = "new user")
+    public String saveNewUser(@RequestParam String userName, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String email)
+    {
+        users.add(new User(userName, firstName, lastName, email));
 
         return "redirect";
     }
