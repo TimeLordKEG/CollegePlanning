@@ -20,23 +20,26 @@ public class CollegePlanningController {
     }
 
     @RequestMapping(value = "")
-    public String loadIndexPage()
+    public String loadIndexPage(Model model)
     {
+        model.addAttribute(("users"), users);
+        model.addAttribute(("count"), users.size());
         return "welcome.html";
     }
 
-    @GetMapping (value ="new user")
-    public String getNewUser(Model model)
+    @RequestMapping (value ="new", method = RequestMethod.GET)
+    public String getNewUser()
     {
 
-        return "redirect";
+        return "redirect:/welcome";
     }
 
-    @PostMapping(value = "new user")
+    @RequestMapping(value = "new", method = RequestMethod.POST)
     public String saveNewUser(@RequestParam String userName, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String email)
     {
         users.add(new User(userName, firstName, lastName, email));
 
-        return "redirect";
+        return "redirect:/welcome";
+
     }
 }
