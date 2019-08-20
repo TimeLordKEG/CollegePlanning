@@ -8,8 +8,10 @@
 
     <div class="wrapper">
     <div class="one">
-    <h3>Please create your account below to begin planning your college journey.</h3>
+    <h3>Please create your account below.  If you're already registered, please click the Log In button.</h3>
     <br/>
+    </div>
+        <div class="two">
         <form method="post" action="/welcome/new">
             <input type="text" class="advancedSearchTextbox" name="userName" placeholder="User Name"/>
             <br/><input type="text" class="advancedSearchTextbox" name="firstName" placeholder="First Name"/>
@@ -17,17 +19,18 @@
             <br/><input type="text" class="advancedSearchTextbox" name="email" placeholder="Email Address"/>
             <br/><br/><input type="submit" value="Create User"/>
         </form>
-        <br/>
-    </div>
+            <form method="post" action="welcome/log-in">
+                <input type="submit" value="Log In"/>
+            </form>
+        </div>
 
-    <div class="two">
-    <br/><br/>Current number of users registered: <span th:text="${count}"/>
+    <!--<br/><br/>Current number of users registered: <span th:text="${count}"/>
     <br/>
 
     <ul>
         <li th:each="users: ${users}" th:text="${users.userName}"/>
     </ul>
-    </div>
+    </div>-->
 
     <div class="three">
         <img src="https://live.staticflickr.com/65535/48580494401_85640cb30c_m.jpg" alt="The future belongs to those who believe in the beauty of their dreams   -- Eleanor Roosevelt" width="325" height="450">

@@ -4,31 +4,53 @@
     grid-auto-rows: minmax(100px, auto) ;
 }
 
+h3{
+    text-align: center
+	color: rgb(40, 49, 115);
+	font-family: Verdana;
+	text-align: center;
+	font-size: 16px;
+}
 .one { grid-column: 1 / 5;
            grid-row: 1 / 1;
 }
 
-.two { grid-column: 1 / 2;
+.two { grid-column: 2 / 3;
            grid-row: 2 / 5 ;
 }
 
 .three { grid-column: 4 / 5;
-             grid-row: 1 / 5;
+             grid-row: 2 / 4;
+}
+
+input{
+margin-bottom: 10px;
 }
 
 input[type=text]{
-padding: 0;
-height: 30px;
-position: relative;
-left: 0;
-outline: none;
-border: .5px solid;
-border-color: rgb (74, 74, 72);
-background-color: white;
-font-size: 16px;
+    padding: 5px;
+    height: 30px;
+    position: relative;
+    left: 0;
+    outline: none;
+    border: 1.5px solid;
+    border-color: rgb (1,106,188);
+    background-color: white;
+    font-size: 16px;
+    width: 500px;
+}
+
+input[type=submit]{
+    background: rgb(1,106,188);
+    color: rgb(255,255,255);
+    border: 1px solid #eee;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow:none;
+    width: 200px;
 }
 
 .advancedSearchTextbox{
-witdth: 500px;
-margin-right: -4px;
+    witdth: 500px;
+    margin-right: -4px;
 }

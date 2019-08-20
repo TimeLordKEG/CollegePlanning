@@ -13,12 +13,33 @@ h1{
 	font-size: 36px;
 }
 
+ul{
+    text-align: center;
+    font-weight: bold;
+}
+
 .about{
     color: rgb(40, 49, 115);
     font-family: Verdana;
     font-size: 16px;
+    text-align: center;
+}
+
+form{
+    text-align: center
+}
+
+input[type=submit]{
+    background: rgb(1,106,188);
+    color: rgb(255,255,255);
+    border: 1px solid #eee;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow:none;
+    width: 250px;
 }
 
 footer{
     color: rgb(124, 33, 181);
+    text-align: center;
 }
