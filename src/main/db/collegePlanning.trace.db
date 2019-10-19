@@ -1,15 +1,30 @@
-2019-09-11 19:21:56 jdbc[4]: null
-org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-197]
+2019-09-04 19:10:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Schema "COLLEGE_PLANNING" not found; SQL statement:
+SELECT * FROM college_planning.users [90079-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
 	at org.h2.message.DbException.get(DbException.java:179)
 	at org.h2.message.DbException.get(DbException.java:155)
-	at org.h2.message.DbException.get(DbException.java:144)
-	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:197)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:137)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:103)
-	at org.h2.Driver.connect(Driver.java:69)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:733)
-	at org.h2.server.web.WebApp.login(WebApp.java:954)
-	at org.h2.server.web.WebApp.process(WebApp.java:211)
+	at org.h2.command.Parser.getSchema(Parser.java:701)
+	at org.h2.command.Parser.getSchema(Parser.java:707)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1388)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:2138)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:2287)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:2133)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1946)
+	at org.h2.command.Parser.parseSelect(Parser.java:1919)
+	at org.h2.command.Parser.parsePrepared(Parser.java:463)
+	at org.h2.command.Parser.parse(Parser.java:335)
+	at org.h2.command.Parser.parse(Parser.java:307)
+	at org.h2.command.Parser.prepareCommand(Parser.java:278)
+	at org.h2.engine.Session.prepareLocal(Session.java:611)
+	at org.h2.engine.Session.prepareCommand(Session.java:549)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1247)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:1077)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1386)
+	at org.h2.server.web.WebApp.query(WebApp.java:1060)
+	at org.h2.server.web.WebApp.query(WebApp.java:1036)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
 	at org.h2.server.web.WebApp.processRequest(WebApp.java:170)
 	at org.h2.server.web.WebServlet.doGet(WebServlet.java:124)
 	at org.h2.server.web.WebServlet.doPost(WebServlet.java:161)
@@ -52,6 +67,3 @@ org.h2.message.DbException: The connection was not closed by the application and
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-197]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
-	... 52 more

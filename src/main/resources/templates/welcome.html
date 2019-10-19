@@ -2,38 +2,39 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <body>
-    <meta charset="UTF-8">
-    <title>welcome</title>
-    <link href="./register.css" type="text/css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>welcome</title>
+<link href="./register.css" type="text/css" rel="stylesheet">
 
-    <div class="wrapper">
+<div class="wrapper">
     <div class="one">
-    <h3>Please create your account below.  If you're already registered, please click the Log In button.</h3>
-    <br/>
+        <h3>Please create your account below.  If you're already registered, please click the Log In button.</h3>
+        <br/>
     </div>
-        <div class="two">
+    <div class="two">
         <form method="post" action="/welcome/new">
             <input type="text" class="advancedSearchTextbox" name="userName" placeholder="User Name"/>
-            <br/><input type="text" class="advancedSearchTextbox" name="firstName" placeholder="First Name"/>
-            <br/><input type="text" class="advancedSearchTextbox" name="lastName" placeholder="Last Name"/>
-            <br/><input type="text" class="advancedSearchTextbox" name="email" placeholder="Email Address"/>
+            <br/><input type="text" class="advancedSearchTextbox" name="first_Name" placeholder="First Name"/>
+            <br/><input type="text" class="advancedSearchTextbox" name="last_Name" placeholder="Last Name"/>
+            <br/><input type="text" class="advancedSearchTextbox" name="emailaddress" placeholder="Email Address"/>
+
             <br/><br/><input type="submit" value="Create User"/>
         </form>
-            <form method="post" action="welcome/log-in">
-                <input type="submit" value="Log In"/>
-            </form>
-            <br/><br/>Current number of users registered: <span th:text="${count}"/>
-            <br/>
-            <ul>
-                <li th:each="users: ${users}" th:text="${users.userName}"/>
-            </ul>
-        </div>
+        <form method="post" action="welcome/log-in">
+            <input type="submit" value="Log In"/>
+        </form>
+        <!--<br/><br/>Current number of users registered: <span th:text="${count}"/>
+        <br/>
+        <ul>
+            <li th:each="users: ${users}" th:text="${users.userName}"/>
+        </ul>-->
+    </div>
 
 
     <div class="three">
         <a href="https://imgur.com/KQRCS2b"><img src="https://i.imgur.com/KQRCS2b.png" title="source: imgur.com" alt="The future belongs to those who believe in the beauty of their dreams   -- Eleanor Roosevelt" width="325" height="450"></a>
     </div>
-    </div>
+</div>
 
 </body>
 </head>

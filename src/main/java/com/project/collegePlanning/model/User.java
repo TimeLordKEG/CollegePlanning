@@ -2,18 +2,20 @@ package com.project.collegePlanning.model;
 
 public class User {
 
+    private int id;
     private String userName;
-    private String firstName;
-    private String lastName;
-    private String email;
+    private String first_Name;
+    private String last_Name;
+    private String emailaddress;
 
 
-    public User(String userName, String firstName, String lastName, String email) {
+    public User(int id, String userName, String first_Name, String last_Name, String emailaddress) {
+
+        setId(id);
         setUserName(userName);
-        setFirstName(firstName);
-        setLastName(lastName);
-        setEmail(email);
-
+        setFirst_Name(first_Name);
+        setLast_Name(last_Name);
+        setEmailaddress(emailaddress);
     }
 
     @Override
@@ -25,33 +27,41 @@ public class User {
         return userName;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirst_Name() {
+        return first_Name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirst_Name(String first_Name) {
+        this.first_Name = first_Name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLast_Name() {
+        return last_Name;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLast_Name(String last_Name) {
+        this.last_Name = last_Name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailaddress() {
+        return emailaddress;
     }
 
-    public void setEmail(String email) {
+    public void setEmailaddress(String emailaddress) {
         //if (email.contains("@")){
-        this.email = email;
+        this.emailaddress = emailaddress;
         //}
     }
 
