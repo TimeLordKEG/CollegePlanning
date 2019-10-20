@@ -27,17 +27,13 @@ public class User {
         return userName;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId() {
-        return id;
-    }
-
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    public void setId(int id) { this.id = id; }
+
+    public int getId() { return id; }
 
     public String getFirst_Name() {
         return first_Name;
