@@ -12,16 +12,18 @@
         <br/>
     </div>
     <div class="two">
-        <form method="post" action="/welcome/new">
-            <input type="text" class="advancedSearchTextbox" name="userName" placeholder="User Name"/>
-            <br/><input type="text" class="advancedSearchTextbox" name="first_Name" placeholder="First Name"/>
-            <br/><input type="text" class="advancedSearchTextbox" name="last_Name" placeholder="Last Name"/>
-            <br/><input type="text" class="advancedSearchTextbox" name="emailaddress" placeholder="Email Address"/>
+        <form method="post" action="welcome/entry">
+            <input type="text" class="advancedSearchTextbox" name="emailAddress" placeholder="Email Address"/>
+            <br/><input type="text" class="advancedSearchTextbox" name="school_Name" placeholder="School Name"/>
+            <br/><input type="text" class="advancedSearchTextbox" name="location" placeholder="Location"/>
+            <br/><input type="text" class="advancedSearchTextbox" name="application_Deadline" placeholder="Application Deadline"/>
+            <br/><input type="text" class="advancedSearchTextbox" name="pros" placeholder="Pros"/>
+            <br/><input type="text" class="advancedSearchTextbox" name="cons" placeholder="Cons"/>
 
-            <br/><br/><input type="submit" value="Create User"/>
+            <br/><br/><input type="submit" value="Submit Entry"/>
         </form>
-        <form method="post" action="/entry">
-            <input type="submit" value="Create Entry"/>
+
+
         </form>
         <!--<br/><br/>Current number of users registered: <span th:text="${count}"/>
         <br/>
@@ -32,7 +34,14 @@
 
 
     <div class="three">
-        <a href="https://imgur.com/KQRCS2b"><img src="https://i.imgur.com/KQRCS2b.png" title="source: imgur.com" alt="The future belongs to those who believe in the beauty of their dreams   -- Eleanor Roosevelt" width="325" height="450"></a>
+        <form method="get" action="/list">
+
+            <input type="text" class="advancedSearchTextbox" name="emailAddress" placeholder="Email Address"/>
+            <br/><br/><input type="submit" value="View school list">
+
+        </form>
+       <br/><br/>
+        <a href="https://imgur.com/KQRCS2b"><img src="https://i.imgur.com/KQRCS2b.png" title="source: imgur.com" alt="The future belongs to those who believe in the beauty of their dreams   -- Eleanor Roosevelt" width="225" height="350"></a>
     </div>
 </div>
 

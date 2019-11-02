@@ -15,14 +15,16 @@ public class SchoolRowMapper implements RowMapper<School> {
         String school_Name;
         String location;
         String application_Deadline;
-        String notes;
+        String pros;
+        String cons;
 
         emailAddress = resultSet.getString("Email");
         school_Name = resultSet.getString("School Name");
         location = resultSet.getString("Location");
         application_Deadline = resultSet.getString("Application Deadline");
-        notes = resultSet.getString("Notes");
+        pros = resultSet.getString("Pros");
+        cons= resultSet.getString("Cons");
 
-        return new School(emailAddress, school_Name, location, application_Deadline, notes);
+        return new School(emailAddress, school_Name, location, application_Deadline, pros, cons);
     }
 }

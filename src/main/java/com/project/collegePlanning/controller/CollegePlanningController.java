@@ -16,6 +16,7 @@ import java.util.List;
 @RequestMapping("welcome")
 public class CollegePlanningController {
 
+
     //static ArrayList<User> users;
 
     //public CollegePlanningController(){
@@ -35,7 +36,7 @@ public class CollegePlanningController {
     }
 
     @GetMapping("/new")
-    public String getNewUser(Model model)
+    public String getNewSchool(Model model)
     {
         List<User> user = collegePlanningDAO.getAll();
         model.addAttribute(("User"), user);

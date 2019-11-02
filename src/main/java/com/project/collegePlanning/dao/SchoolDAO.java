@@ -24,14 +24,14 @@ public class SchoolDAO {
         System.out.println("Inserting " + school);
         jdbcTemplate.update(
                 "INSERT INTO college_planning.school(emailAddress, school_Name, location, application_Deadline, notes) VALUES (?,?,?,?,?)",
-                school.getEmailAddress(), school.getSchool_Name(), school.getLocation(), school.getApplication_deadline(), school.getNotes());
+                school.getEmailAddress(), school.getSchool_Name(), school.getLocation(), school.getApplication_deadline(), school.getPros(), school.getCons());
     }
 
     public void updateSchool(String emailAddress, School school) {
         System.out.println("Updating " + school);
         jdbcTemplate.update(
-                "UPDATE college_planning.school SET emailAddress=?, school_Name=?, location=?, application_deadline=? where notes=?",
-                school.getEmailAddress(), school.getSchool_Name(), school.getLocation(), school.getApplication_deadline(), school.getNotes());
+                "UPDATE college_planning.school SET emailAddress=?, school_Name=?, location=?, application_deadline=? where pros=?, where cons=?",
+                school.getEmailAddress(), school.getSchool_Name(), school.getLocation(), school.getApplication_deadline(), school.getPros(), school.getCons());
     }
 
     public School findByEmail(String emailAddress) {

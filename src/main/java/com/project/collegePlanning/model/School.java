@@ -6,15 +6,17 @@ public class School {
     private String school_Name;
     private String location;
     private String application_deadline;
-    private String notes;
+    private String pros;
+    private String cons;
 
-    public School(String emailAddress, String school_Name, String location, String application_deadline, String notes){
+    public School(String emailAddress, String school_Name, String location, String application_deadline, String pros, String cons){
 
         setEmailAddress(emailAddress);
         setSchool_Name(school_Name);
         setLocation(location);
         setApplication_deadline(application_deadline);
-        setNotes(notes);
+        setPros(pros);
+        setCons(cons);
 
 
     }
@@ -56,13 +58,22 @@ public class School {
         this.application_deadline = application_deadline;
     }
 
-    public String getNotes() {
-        return notes;
+    public String getPros() {
+        return pros;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public void setPros(String notes) {
+        this.pros = pros;
     }
+
+    public String getCons() {
+        return cons;
+    }
+
+    public void setCons(String cons) {
+        this.cons = cons;
+    }
+
 
 
 }

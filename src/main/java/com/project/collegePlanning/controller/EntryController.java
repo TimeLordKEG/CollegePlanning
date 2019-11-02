@@ -12,30 +12,50 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 @Controller
-@RequestMapping("entry")
+@RequestMapping("welcome/entry")
 public class EntryController {
 
     @Autowired
     private SchoolDAO SchoolDAO;
 
-    @RequestMapping(value = "entry")
+    @RequestMapping(value = "")
 
     @GetMapping()
     public String newSchool(Model model) {
         List<School> schools = SchoolDAO.getAll();
-        model.addAttribute("Email", schools);
+        model.addAttribute(("emailAddress"), schools);
+        model.addAttribute(("school_Name"), schools);
+        model.addAttribute(("location"), schools);
+        model.addAttribute(("application_Deadline"), schools);
+        model.addAttribute(("Pros"), schools);
+        model.addAttribute(("Cons"), schools);
 
-        return "entry.html";
+        return "redirect:/welcome";
     }
 
     @PostMapping()
     public String addNewSchool(@RequestParam(required = false) String emailAddress, @RequestParam(required = false) String school_Name,
                                @RequestParam(required = false) String location, @RequestParam(required = false) String application_Deadline,
-                               @RequestParam(required = false) String notes)
+                               @RequestParam(required = false) String pros, @RequestParam(required=false) String cons)
     {
-        System.out.println("Saved new school..." + emailAddress + " " + school_Name + " " + location + " " + application_Deadline + " " + notes);
-        SchoolDAO.addSchool(new School(emailAddress, school_Name, location, application_Deadline, notes));
+        System.out.println("Saved new school..." + emailAddress + " " + school_Name + " " + location + " " + application_Deadline + " " + pros + " " + cons);
+        SchoolDAO.addSchool(new School(emailAddress, school_Name, location, application_Deadline, pros, cons));
 
-        return "entry.html";
+        return "redirect:/welcome";
     }
+
+    @GetMapping("/list")
+    public String getSchools(@RequestParam String emailAddress){
+        System.out.println("Look at these Schools");
+        SchoolDAO.findByEmail(emailAddress);
+
+        return "view.html";
+    }
+
+    @PostMapping("/list")
+    public String viewList(){
+
+        return "view.html";
+    }
+
 }

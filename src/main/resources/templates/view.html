@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>VIEW SCHOOLS</title>
+    <link href="./register.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <div class="one">
+        <h3>Your schools are listed below.</h3>
+
+    </div>
+    <div>
+    <ul>
+        th: block th:each="s: ${school}">
+            <li>
+                <a th:href="${s.emailAddress}" th:text="${s.emailAddress}"/>
+                <a th:href="${s.school_Name}" th:text="${s.school_Name}"/>
+                <a th:href="${s.location}" th:text="${s.location}"/>
+                <a th:href="${s.application_Deadline}" th:text="${s.application_Deadline}"/>
+                <a th:href="${s.notes}" th:text="${s.notes}"/>
+
+            </li>
+    </ul>
+    </div>
+
+</div>
+</body>
+</html>
