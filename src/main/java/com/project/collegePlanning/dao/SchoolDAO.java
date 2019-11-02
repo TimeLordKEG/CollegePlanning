@@ -23,7 +23,7 @@ public class SchoolDAO {
     public void addSchool(School school) {
         System.out.println("Inserting " + school);
         jdbcTemplate.update(
-                "INSERT INTO college_planning.school(emailAddress, school_Name, location, application_Deadline, notes) VALUES (?,?,?,?,?)",
+                "INSERT INTO college_planning.school(emailAddress, school_Name, location, application_Deadline, pros, cons) VALUES (?,?,?,?,?,?)",
                 school.getEmailAddress(), school.getSchool_Name(), school.getLocation(), school.getApplication_deadline(), school.getPros(), school.getCons());
     }
 
